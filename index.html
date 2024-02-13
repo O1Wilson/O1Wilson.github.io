@@ -1,177 +1,134 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Owen Wilson</title>
+        <link rel="shortcut icon" type="img/png" href="polyburstlogo.png">
+        <link rel="stylesheet" type="text/css" href="css/basic_style.css">
+    </head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>OwenWilsonMyPortfolio</title>
-  </head>
-  <body>
-    <div class="container"></div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">  
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link text-light" href="#home">Home</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-light" href="#about">About</a>
-              </li>
-            <li class="nav-item active">
-              <a class="nav-link text-light" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-light" href="#links">Links</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0 text-light" type="submit">Search</button>
-          </form>
+    <body class="Background">   
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact" <a href="#Contact">Contact</a>
         </div>
-      </nav>
 
-      <div id="home" class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-          <h1 class="display-4">Owen Wilson</h1>
-          <p class="lead">Game developer/design through Unity Engine, and Unreal Engine 5. 
-            <br> Proficient in C# and C++
-          </p>
+        <div id="Home">
+            <video autoplay muted loop id="Typing_Video">
+                <source src="images/polyburstlogo.png" type="video/mp4">
+            </video>
         </div>
-      </div>
 
-      <div id="projects" class="container">
-        <div class="row">
-          <div class="col-sm">
-            
-            <img class="img-fluid" src="Images/Self.jpg" alt=""/>
-          
+        <div class="Video_Text">
+            <h1 class="white-text">Owen Wilson Portfolio</h1>
+            <strong>
+                <p class="center quote">
+                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                        <br>field of battle and to command such unswervingly dutiful actors or troops.
+                    </q>
+                    <br> -Joseph Weizenbaum<br>
+                    <br>
+                    My name is Owen Wilson. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                    <br>
+                    <br>Thank you for stopping by and enjoy! 
+                </p>
+            </strong>
         </div>
-          <div class="col-sm">
-            
-            <h3>About Me</h3>
-            <p>I started game development when I was 15 in highschool.</p>
-            <p>It began by creating music for video games, thats I discovered a passion for game design</p>
-            <p>I spent 3 years self taught learning Unity and making various bits that I never ended up keeping</p>
-            <p>After most of my highschool days spent messing around in the engine I decided to take my passion seriously and enrolled in The Tech Academy bootcamp</p>
-            <p>Here I spent 16 weeks learning the basics of CompSci, C#, C++, Unreal Engine and much more</p>
-          </div>
-          <div class="col-sm">
-            <h3>Career Links</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/owen-wilson-861147225/">LinkedIn</a>
-                </li>
-                <li class="list-group-item">
-                    <a class="nav-link" href="https://github.com/O1Wilson">GitHub</a>
-                </li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      <div id="projects" class="container">
-        <div class="row">
-          <div class="col-sm">
-            
-            <img class="img-fluid" src="Images/PolyBurstLogo.png" alt=""/>
-          
-        </div>
-          <div class="col-sm">
-            
-            <h3> PolyBurst</h3>
-            <p>PolyBurst is a 2D Block Puzzle game, built in Unity</p>
-            <p>This game was originally designed in one week for a Game Jam between me and my friends.</p>
-            <p>The game itself may not be too complicated but it sparked my interest in game development and taught me C#.</p>
-            <p>I made this a cloned game because I wanted to see if I could replicate something into code just from understanding how it plays.</p>
-            <p>The entire game is my code, and there are some new features that include: UI Menu system, Unique pieces(5-square), custom randomizer using a tilebag system, and boss battles + rougelike features.</p>
-          </div>
-          <div class="col-sm">
-            <h3>Project Source</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a class="nav-link" href="">Play PolyBurst</a>
-                </li>
-                <li class="list-group-item">
-                    <a class="nav-link" href="">Source Code</a>
-                </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="card-deck">
-        <div class="card">
-            <img class="img-fluid" src="Images/PolyBurstLogo.png" alt=""/>
-            <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-text">placeholder</p>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="self.jpg">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/self.png"> 
+                        <div class="text">I am a video game/software developer,<br> trained in:<br>C#, C++, Unity,Unreal Engine</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/polyburstlogo.png"> 
+                        <div class="text"><a class="white-text contact" onclick="openForm()">PolyBurst</a></div> 
+                    </div>
+					<div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/polyburstlogo.png"> 
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Eternal Labyrinth</a></div> 
+                    </div>
+					<div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/polyburstlogo.png"> 
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div> 
+                    </div>
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="img-fluid" src="Images/PolyBurstLogo.png" alt=""/>
-            <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-text">placeholder</p>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
+
+        <div class="Row" id="About">
+            <div class="Column_2">
+                <img src="images/polyburstlogo.png" alt="Laptop">
+            </div>
+            <div class="Column_1">
+                <h1>About</h1>
+                <p>
+                    I am a video game developer who loves to code! I do all things including game design, music direction, and art work!
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s C# and Unity Boot Camps, and trained and experienced in the following web and programming languages: C#, C++, Unreal Engine, Unity, Javascript and more. 
+                    <br>
+                    <br>I am a Indie Game Developer and would love to work with you on your project. <a onclick="openForm()" class="contact" href="#Contact">Contact</a> me below!
+                </p>
             </div>
         </div>
-        <div class="card">
-            <img class="img-fluid" src="Images/PolyBurstLogo.png" alt=""/>
-            <div class="card-body">
-                <h5 class="card-title">placeholder</h5>
-                <p class="card-text">placeholder</p>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
-                <span class="badge badge-pill badge-info">placeholder</span>
+
+        <div class="Row" id="GitHub">
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p>You can view my coding projects on my GitHub profile here: Check out PolyBurst or ELVD!
+                    <br>
+                    <p class="center"><a href="https://github.com/O1Wilson" target="_blank">Owen Wilson GitHub!</a></p>
+                </p>
+            </div>
+            <div class="Column_2">
+                <a href="https://github.com/O1Wilson" target="_blank"><img src="images/polyburstlogo.png"></a>
             </div>
         </div>
-      </div>
-  
 
-      <div id="links" class="container my-5">
-        <ul class="nav nav-inline">
-            <li class="nav-item">
-            <a class="nav-link active" href="https://github.com/O1Wilson">GitHub</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/owen-wilson-861147225/">LinkedIn</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">YouTube</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link link" href="#">Instagram</a>
-            </li>
-        </ul>
-      </div>
+        <div id="Contact">
+		<button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+			<div class="form-popup" id="myForm" ondblclick="closeForm()">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                      <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                      <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>		
+                      <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                      <input type="text" placeholder="Type your message here" name="message">
 
-    </div>
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+           </div>
+        </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+        <script src="js/main.js"></script>
+		<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh'},{'server':'a2plcpnl0622'},{'dcenter':'a2'},{'cp_id':'5821630'},{'cp_cache':''},{'cp_cl':'6'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+		</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script>
+	</body>
 </html>
