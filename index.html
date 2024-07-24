@@ -1,134 +1,209 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Owen Wilson</title>
-        <link rel="shortcut icon" type="image/png" href="polyburstlogo.png">
-        <link rel="stylesheet" type="text/css" href="css/basic_style.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .icon-hover:hover {
+            transform: scale(1.2);
+            animation: sheen 1s infinite;
+        }
+        @keyframes sheen {
+            0% {
+                text-shadow: 0 0 20px #fff;
+            }
+            100% {
+                text-shadow: 0 0 5px #000;
+            }
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
 
-    <body class="Background">   
-        <div class="Navbar">
-            <a class="active" href="#Home">Home</a>
-            <a href="#Slideshow">Slideshow</a>
-            <a href="#About">About</a>
-            <a href="#GitHub">GitHub</a>
-            <a onclick="openForm()" ondblclick="closeForm()" class="contact" <a href="#Contact">Contact</a>
+<nav class="bg-gray-200 dark:bg-gray-900 fixed w-full top-0 left-0 shadow-md z-50">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+        <strong>Portfolio</strong>
+        <ul class="flex space-x-4">
+            <li><a href="#about" class="hover:text-blue-500">About Me</a></li>
+            <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+            <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+            <li><button onclick="toggleDarkMode()" class="hover:text-blue-500">Toggle Dark Mode</button></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container mx-auto mt-20 p-4">
+
+    <section id="about" class="mb-20">
+        <div class="text-center">
+            <img src="path/to/your/selfie.jpg" alt="Your Photo" class="mx-auto rounded-full w-48 h-48 mb-4">
+            <h2 class="text-2xl font-semibold">Hello! I'm a passionate software and game developer based in Dallas, TX.</h2>
+            <p>My journey began in the music industry, but a deep fascination with coding led me to transition into the tech world. Over the past nearly 4 years, I've been dedicated to honing my skills, and I've accumulated 3 months of professional experience in software and game development. With a focus on continuous learning and growth, I’m always excited to explore new technologies and enhance my expertise. Whether it's developing innovative software solutions or creating immersive game experiences, I'm driven by a love for problem-solving and a commitment to excellence. Feel free to connect with me or explore my projects to see how I combine creativity with technical skills to bring ideas to life!</p>
         </div>
+    </section>
 
-        <div id="Home">
-            <video autoplay muted loop id="Typing_Video">
-                <source src="Images/PolyBurstLogo.png" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="Video_Text">
-            <h1 class="white-text">Owen Wilson Portfolio</h1>
-            <strong>
-                <p class="center quote">
-                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                        <br>field of battle and to command such unswervingly dutiful actors or troops.
-                    </q>
-                    <br> -Joseph Weizenbaum<br>
-                    <br>
-                    My name is Owen Wilson. Welcome to my portfolio website. On it, I will tell you about my background and experience.
-                    <br>
-                    <br>Thank you for stopping by and enjoy! 
-                </p>
-            </strong>
-        </div>
-
-        <div id="Slideshow">
-            <div id="Slideshow_Background"> 
-                <div id="Slideshow_Container">
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Images/Self.jpg">
-                        <div class="text">I'm available to assist you on your project!</div>
+    <section id="skills" class="mb-20">
+        <h2 class="text-3xl font-semibold mb-4">Skills</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <h3 class="text-xl font-semibold">Programming Languages</h3>
+                <div class="flex flex-wrap">
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-python-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Python</span>
                     </div>
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Images/Self.jpg"> 
-                        <div class="text">I am a video game/software developer,<br> trained in:<br>C#, C++, Unity,Unreal Engine</div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-javascript-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">JavaScript</span>
                     </div>
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Images/PolyBurstLogo.png"> 
-                        <div class="text"><a class="white-text contact" onclick="openForm()">PolyBurst</a></div> 
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-csharp-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">C#</span>
                     </div>
-					<div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Images/PolyBurstLogo.png"> 
-                        <div class="text"><a class="white-text contact" onclick="openForm()">Eternal Labyrinth</a></div> 
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-cplusplus-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">C++</span>
                     </div>
-					<div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Images/PolyBurstLogo.png"> 
-                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div> 
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-html5-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">HTML</span>
                     </div>
-                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-css3-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">CSS</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-sql-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">SQL</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-typescript-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">TypeScript</span>
+                    </div>
                 </div>
-                <br>
-                <div style="text-align: center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span> 
-                    <span class="dot" onclick="currentSlide(4)"></span> 
-                    <span class="dot" onclick="currentSlide(5)"></span> 
-                    <span class="dot" onclick="currentSlide(6)"></span> 
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold">Frameworks/Libraries</h3>
+                <div class="flex flex-wrap">
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-flask-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Flask</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-django-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Django</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-bootstrap-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Bootstrap</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-tailwindcss-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Tailwind</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-react-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">React</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-docker-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Docker</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="Row" id="About">
-            <div class="Column_2">
-                <img src="Images/PolyBurstLogo.png" alt="Laptop">
+            <div>
+                <h3 class="text-xl font-semibold">Tools</h3>
+                <div class="flex flex-wrap">
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-azure-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Azure DevOps</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-git-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Git</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-adobe-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Adobe Platforms</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-blender-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Blender</span>
+                    </div>
+                </div>
             </div>
-            <div class="Column_1">
-                <h1>About</h1>
-                <p>
-                    I am a video game developer who loves to code! I do all things including game design, music direction, and art work!
-                    <br>
-                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s C# and Unity Boot Camps, and trained and experienced in the following web and programming languages: C#, C++, Unreal Engine, Unity, Javascript and more. 
-                    <br>
-                    <br>I am a Indie Game Developer and would love to work with you on your project. <a onclick="openForm()" class="contact" href="#Contact">Contact</a> me below!
-                </p>
+
+            <div>
+                <h3 class="text-xl font-semibold">Soft Skills</h3>
+                <ul class="list-disc list-inside">
+                    <li>Agile/Scrum Methodology</li>
+                    <li>Effective Communication</li>
+                    <li>Creativity</li>
+                    <li>Collaboration</li>
+                    <li>Time-Management</li>
+                    <li>Critical Thinking</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <div class="Row" id="GitHub">
-            <div class="Column_1">
-                <h1>GitHub</h1>
-                <p>You can view my coding projects on my GitHub profile here: Check out PolyBurst or ELVD!
-                    <br>
-                    <p class="center"><a href="https://github.com/O1Wilson" target="_blank">Owen Wilson GitHub!</a></p>
-                </p>
+    <section id="projects" class="mb-20">
+        <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+                <h3 class="text-xl font-semibold">Fullstack01</h3>
+                <p>Project description goes here...</p>
             </div>
-            <div class="Column_2">
-                <a href="https://github.com/O1Wilson" target="_blank"><img src="Images/PolyBurstLogo.png"></a>
+            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+                <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
+                <p>Project description goes here...</p>
+            </div>
+            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+                <h3 class="text-xl font-semibold">Polyburst</h3>
+                <p>Project description goes here...</p>
+            </div>
+            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+                <h3 class="text-xl font-semibold">Portfolio Website</h3>
+                <p>Project description goes here...</p>
             </div>
         </div>
+    </section>
 
-        <div id="Contact">
-		<button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
-			<div class="form-popup" id="myForm" ondblclick="closeForm()">
-                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
-                    <h1>Contact</h1>
-                    <label for="name"><b>Name</b></label>
-                      <input type="text" placeholder="Type your name here" name="name" required>
-                    <label for="phone"><b>Phone</b></label>
-                      <input type="text" placeholder="Type your phone number here" name="phone">
-                    <label for="email"><b>Email</b></label>		
-                      <input type="text" placeholder="Type your email address here" name="email" required>
-                    <label for="message"><b>Message</b></label>
-                      <input type="text" placeholder="Type your message here" name="message">
+</main>
 
-                    <button type="submit" class="btn">SUBMIT</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                </form>
-           </div>
+<footer class="bg-gray-200 dark:bg-gray-900 py-8">
+    <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+        <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+            <input type="text" id="firstname" name="firstname" placeholder="Your Name" class="p-2 rounded">
+            <input type="email" id="email" name="email" placeholder="Your Email" class="p-2 rounded">
+            <button type="submit" onclick="event.preventDefault()" class="col-span-2 bg-blue-500 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+        </form>
+        <div class="mt-4">
+            <p>Email: your.email@example.com</p>
+            <p>Phone: (123) 456-7890</p>
         </div>
+    </div>
+</footer>
 
-        <script src="js/main.js"></script>
-		<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh'},{'server':'a2plcpnl0622'},{'dcenter':'a2'},{'cp_id':'5821630'},{'cp_cache':''},{'cp_cl':'6'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
-		</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script>
-	</body>
+</body>
 </html>
