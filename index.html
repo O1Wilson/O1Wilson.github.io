@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,6 +15,12 @@
         .dark-mode {
             background-color: #1a202c;
             color: #a0aec0;
+        }
+        .dark-mode nav {
+            background-color: #0d1016;
+        }
+        .dark-mode footer {
+            background-color: #0d1016;
         }
         .icon-hover:hover {
             transform: scale(1.2);
@@ -28,10 +34,31 @@
                 text-shadow: 0 0 5px #000;
             }
         }
+        /* Dark mode styles for input fields */
+        .dark-mode input[type="text"],
+        .dark-mode input[type="email"] {
+            background-color: #0d1016;
+            color: #a0aec0; /* Ensure text is visible */
+            border: 1px solid #333; /* Optional: adjust border color */
+        }
+
+        /* Dark mode styles for project boxes */
+        .dark-mode .project-box {
+            background-color: #0d1016;
+        }
     </style>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+            document.querySelector('nav').classList.toggle('dark:bg-gray-900');
+            document.querySelector('nav').classList.toggle('bg-gray-200');
+            document.querySelector('footer').classList.toggle('dark:bg-gray-900');
+            document.querySelector('footer').classList.toggle('bg-gray-200');
+
+            document.querySelectorAll('.project-box').forEach(element => {
+                element.classList.toggle('dark:bg-gray-700');
+                element.classList.toggle('bg-gray-200');
+            });
         }
     </script>
 </head>
@@ -55,7 +82,7 @@
         <div class="text-center">
             <img src="path/to/your/selfie.jpg" alt="Your Photo" class="mx-auto rounded-full w-48 h-48 mb-4">
             <h2 class="text-2xl font-semibold">Hello! I'm a passionate software and game developer based in Dallas, TX.</h2>
-            <p>My journey began in the music industry, but a deep fascination with coding led me to transition into the tech world. Over the past nearly 4 years, I've been dedicated to honing my skills, and I've accumulated 3 months of professional experience in software and game development. With a focus on continuous learning and growth, I’m always excited to explore new technologies and enhance my expertise. Whether it's developing innovative software solutions or creating immersive game experiences, I'm driven by a love for problem-solving and a commitment to excellence. Feel free to connect with me or explore my projects to see how I combine creativity with technical skills to bring ideas to life!</p>
+            <p>My journey began in the music industry, but a deep fascination with coding led me to transition into the tech world. Over the past nearly 4 years, I've been dedicated to honing my skills, and I've accumulated 3 months of professional experience in software development. With a focus on continuous learning and growth, I’m always excited to explore new technologies and enhance my expertise. Whether it's developing innovative software solutions or creating immersive game experiences, I'm driven by a love for problem-solving and a commitment to excellence. Feel free to connect with me or explore my projects to see how I combine creativity with technical skills to bring ideas to life!</p>
         </div>
     </section>
 
@@ -90,7 +117,7 @@
                         <span class="ml-2">CSS</span>
                     </div>
                     <div class="flex items-center mr-4 mt-2">
-                        <i class="devicon-sql-plain icon-hover text-3xl"></i>
+                        <i class="devicon-azuresqldatabase-plain icon-hover text-3xl"></i>
                         <span class="ml-2">SQL</span>
                     </div>
                     <div class="flex items-center mr-4 mt-2">
@@ -142,12 +169,20 @@
                         <span class="ml-2">Git</span>
                     </div>
                     <div class="flex items-center mr-4 mt-2">
-                        <i class="devicon-adobe-plain icon-hover text-3xl"></i>
+                        <i class="devicon-photoshop-plain icon-hover text-3xl"></i>
                         <span class="ml-2">Adobe Platforms</span>
                     </div>
                     <div class="flex items-center mr-4 mt-2">
-                        <i class="devicon-blender-plain icon-hover text-3xl"></i>
+                        <i class="devicon-blender-original icon-hover text-3xl"></i>
                         <span class="ml-2">Blender</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-unity-plain icon-hover text-3xl"></i>
+                        <span class="ml-2">Unity</span>
+                    </div>
+                    <div class="flex items-center mr-4 mt-2">
+                        <i class="devicon-unrealengine-original icon-hover text-3xl"></i>
+                        <span class="ml-2">Unreal Engine</span>
                     </div>
                 </div>
             </div>
@@ -169,19 +204,19 @@
     <section id="projects" class="mb-20">
         <h2 class="text-3xl font-semibold mb-4">Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
                 <h3 class="text-xl font-semibold">Fullstack01</h3>
                 <p>Project description goes here...</p>
             </div>
-            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
                 <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
                 <p>Project description goes here...</p>
             </div>
-            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
                 <h3 class="text-xl font-semibold">Polyburst</h3>
                 <p>Project description goes here...</p>
             </div>
-            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded">
+            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
                 <h3 class="text-xl font-semibold">Portfolio Website</h3>
                 <p>Project description goes here...</p>
             </div>
@@ -199,8 +234,8 @@
             <button type="submit" onclick="event.preventDefault()" class="col-span-2 bg-blue-500 text-white py-2 rounded hover:bg-blue-700">Submit</button>
         </form>
         <div class="mt-4">
-            <p>Email: your.email@example.com</p>
-            <p>Phone: (123) 456-7890</p>
+            <p>Email: O1Wilson2005@gmail.com</p>
+            <p>Phone: (469) 732-6315</p>
         </div>
     </div>
 </footer>
