@@ -12,15 +12,31 @@
             font-family: 'Segoe UI', sans-serif;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
+        .hidden {
+            display: none;
+        }
         .dark-mode {
             background-color: #1a202c;
             color: #a0aec0;
         }
         .dark-mode nav {
             background-color: #0d1016;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
         .dark-mode footer {
             background-color: #0d1016;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .dark-mode input[type="text"],
+        .dark-mode input[type="email"] {
+            background-color: #0d1016;
+            color: #a0aec0;
+            border: 1px solid #333;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .dark-mode .project-box {
+            background-color: #0d1016;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
         .icon-hover:hover {
             transform: scale(1.2);
@@ -34,30 +50,27 @@
                 text-shadow: 0 0 5px #000;
             }
         }
-        .dark-mode input[type="text"],
-        .dark-mode input[type="email"] {
-            background-color: #0d1016;
-            color: #a0aec0;
-            border: 1px solid #333;
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6.5rem;
         }
-        .dark-mode .project-box {
-            background-color: #0d1016;
+        .project-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+        .project-box {
+            transition: transform 0.5s ease, z-index 0.5s ease;
+        }
+        .enlarged {
+            transform: scale(3);
+            z-index: 10;
         }
     </style>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('nav').classList.toggle('dark:bg-gray-900');
-            document.querySelector('nav').classList.toggle('bg-gray-200');
-            document.querySelector('footer').classList.toggle('dark:bg-gray-900');
-            document.querySelector('footer').classList.toggle('bg-gray-200');
-
-            document.querySelectorAll('.project-box').forEach(element => {
-                element.classList.toggle('dark:bg-gray-700');
-                element.classList.toggle('bg-gray-200');
-            });
-        }
-    </script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
 
@@ -200,25 +213,27 @@
 
     <section id="projects" class="mb-20">
         <h2 class="text-3xl font-semibold mb-4">Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
-                <h3 class="text-xl font-semibold">Fullstack01</h3>
-                <p>Project description goes here...</p>
-            </div>
-            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
-                <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
-                <p>Project description goes here...</p>
-            </div>
-            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
-                <h3 class="text-xl font-semibold">Polyburst</h3>
-                <p>Project description goes here...</p>
-            </div>
-            <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded">
-                <h3 class="text-xl font-semibold">Portfolio Website</h3>
-                <p>Project description goes here...</p>
+        <div id="project-container" class="project-container">
+            <div id="project-row" class="project-row">
+                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Fullstack01">
+                    <h3 class="text-xl font-semibold">Fullstack01</h3>
+                    <p class="project-description hidden">Project description goes here...</p>
+                </div>
+                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Eternal Labyrinth">
+                    <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
+                    <p class="project-description hidden">Project description goes here...</p>
+                </div>
+                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Polyburst">
+                    <h3 class="text-xl font-semibold">Polyburst</h3>
+                    <p class="project-description hidden">Project description goes here...</p>
+                </div>
+                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Portfolio Website">
+                    <h3 class="text-xl font-semibold">Portfolio Website</h3>
+                    <p class="project-description hidden">Project description goes here...</p>
+                </div>
             </div>
         </div>
-    </section>
+    </section>    
 
 </main>
 
@@ -236,6 +251,61 @@
         </div>
     </div>
 </footer>
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('nav').classList.toggle('dark:bg-gray-900');
+        document.querySelector('nav').classList.toggle('bg-gray-200');
+        document.querySelector('footer').classList.toggle('dark:bg-gray-900');
+        document.querySelector('footer').classList.toggle('bg-gray-200');
 
+        document.querySelectorAll('.project-box').forEach(element => {
+            element.classList.toggle('dark:bg-gray-700');
+            element.classList.toggle('bg-gray-200');
+        });
+
+        localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('nav').classList.add('dark:bg-gray-900');
+            document.querySelector('footer').classList.add('dark:bg-gray-900');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let enlargedBox = null;
+        const projectContainer = document.getElementById('project-container');
+        const projectRow = document.getElementById('project-row');
+        const projectBoxes = document.querySelectorAll('.project-box');
+
+        projectBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const description = box.querySelector('.project-description');
+
+                if (enlargedBox && enlargedBox !== box) {
+                    const prevDescription = enlargedBox.querySelector('.project-description');
+                    prevDescription.classList.add('hidden');
+                    enlargedBox.classList.remove('enlarged');
+                    projectRow.appendChild(enlargedBox); // Move the previously enlarged box back to the row
+                }
+
+                if (enlargedBox === box) {
+                    box.classList.remove('enlarged');
+                    description.classList.add('hidden');
+                    projectRow.appendChild(box);
+                    enlargedBox = null;
+                } else {
+                    box.classList.add('enlarged');
+                    description.classList.remove('hidden');
+                    projectContainer.insertBefore(box, projectRow); // Move the enlarged box to the top
+                    enlargedBox = box;
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
