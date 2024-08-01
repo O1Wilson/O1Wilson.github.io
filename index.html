@@ -12,9 +12,6 @@
             font-family: 'Segoe UI', sans-serif;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
-        .hidden {
-            display: none;
-        }
         .dark-mode {
             background-color: #1a202c;
             color: #a0aec0;
@@ -38,16 +35,22 @@
             background-color: #0d1016;
             transition: background-color 0.5s ease, color 0.5s ease;
         }
+        .icon-hover {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
         .icon-hover:hover {
             transform: scale(1.2);
-            animation: sheen 1s infinite;
+            animation: sheen 1s forwards;
         }
         @keyframes sheen {
             0% {
+                color: #fff;
                 text-shadow: 0 0 20px #fff;
             }
             100% {
-                text-shadow: 0 0 5px #000;
+                color: #008cff;
+                text-shadow: 0 0 5px #008cff;
             }
         }
         .project-container {
@@ -67,8 +70,42 @@
             transition: transform 0.5s ease, z-index 0.5s ease;
         }
         .enlarged {
-            transform: scale(3);
+            transform: scale(1.5);
             z-index: 10;
+        }
+        .custom-link {
+            color: blue !important;
+            text-decoration: underline !important;
+        }
+        .custom-link:hover {
+            color: darkblue !important;
+        }
+        .hidden {
+            display: none;
+        }
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            font-size: 1.5rem;
+        }
+        .typing-text {
+            display: inline;
+        }
+        .typing-highlight {
+            color: #008cff;
+            font-weight: bold;
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 0.1em;
+            height: 1em;
+            vertical-align: bottom;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
         }
     </style>
 </head>
@@ -81,7 +118,7 @@
             <li><a href="#about" class="hover:text-blue-500">About Me</a></li>
             <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
             <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-            <li><button onclick="toggleDarkMode()" class="hover:text-blue-500">Toggle Dark Mode</button></li>
+            <li><button onclick="toggleDarkMode()" class="hover:text-blue-500">Dark Mode</button></li>
         </ul>
     </div>
 </nav>
@@ -91,7 +128,14 @@
     <section id="about" class="mb-20">
         <div class="text-center">
             <img src="path/to/your/selfie.jpg" alt="Your Photo" class="mx-auto rounded-full w-48 h-48 mb-4">
-            <h2 class="text-2xl font-semibold">Hello! I'm a passionate software and game developer based in Dallas, TX.</h2>
+            <h2 class="text-2xl font-semibold">
+                <span class="typing-container">
+                    <span id="typing-text" class="typing-text">
+                        I am <span class="typing-highlight" id="highlight">Owen Wilson</span>
+                    </span>
+                    <span class="typing-cursor"></span>
+                </span>
+            </h2>
             <p>My journey began in the music industry, but a deep fascination with coding led me to transition into the tech world. Over the past nearly 4 years, I've been dedicated to honing my skills, and I've accumulated 3 months of professional experience in software development. With a focus on continuous learning and growth, I’m always excited to explore new technologies and enhance my expertise. Whether it's developing innovative software solutions or creating immersive game experiences, I'm driven by a love for problem-solving and a commitment to excellence. Feel free to connect with me or explore my projects to see how I combine creativity with technical skills to bring ideas to life!</p>
         </div>
     </section>
@@ -217,7 +261,7 @@
             <div id="project-row" class="project-row">
                 <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Fullstack01">
                     <h3 class="text-xl font-semibold">Fullstack01</h3>
-                    <p class="project-description hidden">Project description goes here...</p>
+                    <a class="project-description hidden custom-link" href="https://github.com/O1Wilson/FullStack_01" target="_blank" rel="noopener noreferrer">GitHub Link</a>
                 </div>
                 <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Eternal Labyrinth">
                     <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
@@ -289,7 +333,7 @@
                     const prevDescription = enlargedBox.querySelector('.project-description');
                     prevDescription.classList.add('hidden');
                     enlargedBox.classList.remove('enlarged');
-                    projectRow.appendChild(enlargedBox); // Move the previously enlarged box back to the row
+                    projectRow.appendChild(enlargedBox);
                 }
 
                 if (enlargedBox === box) {
@@ -300,11 +344,61 @@
                 } else {
                     box.classList.add('enlarged');
                     description.classList.remove('hidden');
-                    projectContainer.insertBefore(box, projectRow); // Move the enlarged box to the top
+                    projectContainer.insertBefore(box, projectRow);
                     enlargedBox = box;
                 }
             });
         });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const phrases = [
+            'Owen Wilson',
+            'Fullstack Developer',
+            'Video Game Creator',
+            'Tailwind Designer',
+            'Deep Learning Enthusiast'
+        ];
+        const typingText = document.getElementById('typing-text');
+        const highlight = document.getElementById('highlight');
+
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 120;
+        let deletingSpeed = 100;
+        let pauseDuration = 50;
+
+        function type() {
+            const currentPhrase = phrases[currentPhraseIndex];
+            const baseText = currentPhraseIndex === 0 ? "I am " : "I am a ";
+            
+            let displayText = baseText + `<span class="typing-highlight">${currentPhrase.substring(0, currentCharIndex)}</span>`;
+
+            if (isDeleting) {
+                currentCharIndex--;
+
+                if (currentCharIndex < 0) {
+                    isDeleting = false;
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                    setTimeout(type, pauseDuration);
+                    return;
+                }
+            } else {
+                currentCharIndex++;
+
+                if (currentCharIndex > currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseDuration);
+                    return;
+                }
+            }
+
+            typingText.innerHTML = displayText;
+            setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+        }
+
+        type();
     });
 </script>
 </body>
