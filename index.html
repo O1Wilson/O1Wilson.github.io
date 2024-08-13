@@ -7,107 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .dark-mode {
-            background-color: #1a202c;
-            color: #a0aec0;
-        }
-        .dark-mode nav {
-            background-color: #0d1016;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .dark-mode footer {
-            background-color: #0d1016;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .dark-mode input[type="text"],
-        .dark-mode input[type="email"] {
-            background-color: #0d1016;
-            color: #a0aec0;
-            border: 1px solid #333;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .dark-mode .project-box {
-            background-color: #0d1016;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        .icon-hover {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        .icon-hover:hover {
-            transform: scale(1.2);
-            animation: sheen 1s forwards;
-        }
-        @keyframes sheen {
-            0% {
-                color: #fff;
-                text-shadow: 0 0 20px #fff;
-            }
-            100% {
-                color: #008cff;
-                text-shadow: 0 0 5px #008cff;
-            }
-        }
-        .project-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6.5rem;
-        }
-        .project-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            width: 100%;
-        }
-        .project-box {
-            transition: transform 0.5s ease, z-index 0.5s ease;
-        }
-        .enlarged {
-            transform: scale(1.5);
-            z-index: 10;
-        }
-        .custom-link {
-            color: blue !important;
-            text-decoration: underline !important;
-        }
-        .custom-link:hover {
-            color: darkblue !important;
-        }
-        .hidden {
-            display: none;
-        }
-        .typing-container {
-            display: inline-block;
-            position: relative;
-            font-size: 1.5rem;
-        }
-        .typing-text {
-            display: inline;
-        }
-        .typing-highlight {
-            color: #008cff;
-            font-weight: bold;
-        }
-        .typing-cursor {
-            display: inline-block;
-            width: 0.1em;
-            height: 1em;
-            vertical-align: bottom;
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink {
-            50% {
-                background-color: transparent;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
 
@@ -127,7 +27,7 @@
 
     <section id="about" class="mb-20">
         <div class="text-center">
-            <img src="path/to/your/selfie.jpg" alt="Your Photo" class="mx-auto rounded-full w-48 h-48 mb-4">
+            <img src="css/images/self.jpg" alt="Photo" class="mx-auto rounded-full w-48 h-48 mb-4">
             <h2 class="text-2xl font-semibold">
                 <span class="typing-container">
                     <span id="typing-text" class="typing-text">
@@ -265,15 +165,15 @@
                 </div>
                 <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Eternal Labyrinth">
                     <h3 class="text-xl font-semibold">Eternal Labyrinth</h3>
-                    <p class="project-description hidden">Project description goes here...</p>
+                    <a class="project-description hidden custom-link" href="https://github.com/O1Wilson/Eternal-Labyrinth" target="_blank" rel="noopener noreferrer">GitHub Link</a>
                 </div>
                 <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Polyburst">
                     <h3 class="text-xl font-semibold">Polyburst</h3>
-                    <p class="project-description hidden">Project description goes here...</p>
+                    <a class="project-description hidden custom-link" href="https://github.com/O1Wilson/PolyBurst" target="_blank" rel="noopener noreferrer">GitHub Link</a>
                 </div>
                 <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Portfolio Website">
                     <h3 class="text-xl font-semibold">Portfolio Website</h3>
-                    <p class="project-description hidden">Project description goes here...</p>
+                    <p class="project-description hidden">This website is currently a Work-In-Progress, sorry for the lack of any details...</p>
                 </div>
             </div>
         </div>
@@ -295,111 +195,6 @@
         </div>
     </div>
 </footer>
-<script>
-    function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        document.querySelector('nav').classList.toggle('dark:bg-gray-900');
-        document.querySelector('nav').classList.toggle('bg-gray-200');
-        document.querySelector('footer').classList.toggle('dark:bg-gray-900');
-        document.querySelector('footer').classList.toggle('bg-gray-200');
-
-        document.querySelectorAll('.project-box').forEach(element => {
-            element.classList.toggle('dark:bg-gray-700');
-            element.classList.toggle('bg-gray-200');
-        });
-
-        localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('dark-mode') === 'true') {
-            document.body.classList.add('dark-mode');
-            document.querySelector('nav').classList.add('dark:bg-gray-900');
-            document.querySelector('footer').classList.add('dark:bg-gray-900');
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        let enlargedBox = null;
-        const projectContainer = document.getElementById('project-container');
-        const projectRow = document.getElementById('project-row');
-        const projectBoxes = document.querySelectorAll('.project-box');
-
-        projectBoxes.forEach(box => {
-            box.addEventListener('click', () => {
-                const description = box.querySelector('.project-description');
-
-                if (enlargedBox && enlargedBox !== box) {
-                    const prevDescription = enlargedBox.querySelector('.project-description');
-                    prevDescription.classList.add('hidden');
-                    enlargedBox.classList.remove('enlarged');
-                    projectRow.appendChild(enlargedBox);
-                }
-
-                if (enlargedBox === box) {
-                    box.classList.remove('enlarged');
-                    description.classList.add('hidden');
-                    projectRow.appendChild(box);
-                    enlargedBox = null;
-                } else {
-                    box.classList.add('enlarged');
-                    description.classList.remove('hidden');
-                    projectContainer.insertBefore(box, projectRow);
-                    enlargedBox = box;
-                }
-            });
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const phrases = [
-            'Owen Wilson',
-            'Fullstack Developer',
-            'Video Game Creator',
-            'Tailwind Designer',
-            'Deep Learning Enthusiast'
-        ];
-        const typingText = document.getElementById('typing-text');
-        const highlight = document.getElementById('highlight');
-
-        let currentPhraseIndex = 0;
-        let currentCharIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 120;
-        let deletingSpeed = 100;
-        let pauseDuration = 50;
-
-        function type() {
-            const currentPhrase = phrases[currentPhraseIndex];
-            const baseText = currentPhraseIndex === 0 ? "I am " : "I am a ";
-            
-            let displayText = baseText + `<span class="typing-highlight">${currentPhrase.substring(0, currentCharIndex)}</span>`;
-
-            if (isDeleting) {
-                currentCharIndex--;
-
-                if (currentCharIndex < 0) {
-                    isDeleting = false;
-                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                    setTimeout(type, pauseDuration);
-                    return;
-                }
-            } else {
-                currentCharIndex++;
-
-                if (currentCharIndex > currentPhrase.length) {
-                    isDeleting = true;
-                    setTimeout(type, pauseDuration);
-                    return;
-                }
-            }
-
-            typingText.innerHTML = displayText;
-            setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-        }
-
-        type();
-    });
-</script>
+<script src="js/index.js"></script>
 </body>
 </html>
