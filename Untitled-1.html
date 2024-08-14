@@ -9,6 +9,29 @@
         .hidden {
             display: none !important;
         }
+        @media (max-width: 1280px) {
+            section.grid {
+                grid-template-columns: repeat(3, 1fr); /* Reduce columns for medium screens */
+                grid-template-rows: repeat(8, 1fr);
+            }
+            section.absolute {
+                display: none; /* Hide side sections on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            section.grid {
+                grid-template-columns: repeat(2, 1fr); /* Further reduce columns for smaller screens */
+                grid-template-rows: repeat(12, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            section.grid {
+                grid-template-columns: 1fr; /* Single column for very small screens */
+                grid-template-rows: repeat(24, 1fr);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -98,41 +121,245 @@
     </div>
 </nav>
 
-<main>
-
-    <main class="container mx-auto pt-40 flex justify-center items-center min-h-screen">
-        <section class="grid grid-rows-6 grid-cols-5 gap-4 justify-items-center items-center">
-            <!-- Grid items -->
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-            <div class="bg-gray-300 p-4 h-32 w-56 rounded-md"></div>
-
-        </section> 
-    </main>
+<main class="container mx-auto pt-40 flex justify-center items-center min-h-screen relative">
+    <!-- Left Players -->
+    <section class="grid grid-cols-1 gap-4 justify-items-center items-center absolute left-16 top-40 transform -translate-x-full">
+        <div class="flex space-x-4 mt-6 mb-16">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center">
+                <img src="" alt="Profile Photo" class="rounded-full h-full w-full object-cover" />
+            </div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center">
+                    <span class=""></span>
+                </div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center">
+                            <span class=""></span>
+                        </div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center">
+                        <span class=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Grid -->
+    <section class="grid grid-rows-6 grid-cols-5 gap-4 justify-items-center items-center">
+        <div class="bg-gray-300 h-32 w-56 rounded-md flex items-center justify-center overflow-hidden"><img src="" alt="Location" class="h-full w-full object-cover" /></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+        <div class="bg-gray-300 h-32 w-56 rounded-md animate-pulse"></div>
+    </section> 
+    <!-- Right Players -->
+    <section class="grid grid-cols-1 gap-4 justify-items-center items-center absolute -right-6 top-40">
+        <div class="flex space-x-4 mt-6 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 mb-16 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex space-x-4 animate-pulse">
+            <div class="rounded-full bg-gray-300 h-10 w-10 flex items-center justify-center"></div>
+            <div class="flex-1 space-y-6 py-1">
+                <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-gray-300 rounded col-span-2 flex items-center"></div>
+                    </div>
+                    <div class="h-2 bg-gray-300 rounded flex items-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pop-up Container -->
+    <div id="customize-map-popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-6xl w-full h-5/6 overflow-auto">
+            <!-- Header -->
+            <h2 class="text-2xl font-semibold mb-4">Customize Map-Grid Board</h2>
     
-
+            <!-- Pop-up Content Area -->
+            <div class="flex space-x-6">
+                <!-- Active Table Section -->
+                <div class="flex-1">
+                    <h3 class="text-lg font-medium mb-2">Active Table</h3>
+                    <table class="min-w-full border-collapse shadow-lg">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="py-2 px-4 text-left">Tag</th>
+                                <th class="py-2 px-4 text-left">Include</th>
+                                <th class="py-2 px-4"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row-->
+                            <tr class="border-b">
+                                <td class="py-2 px-4">
+                                    <span class="bg-gray-300 text-gray-700 rounded-full px-3 py-1 text-xs font-medium inline-flex items-center relative">
+                                        <span class="bg-white text-gray-700 rounded-full w-5 h-5 flex items-center justify-center shadow mr-2 hover:bg-red-500 hover:text-white cursor-pointer">7</span>
+                                        Example Tag
+                                    </span>
+                                </td>
+                                <td class="py-2 px-4">
+                                    <select class="border border-gray-300 rounded p-1">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <!-- Add options based on tag count -->
+                                    </select>
+                                </td>
+                                <td class="py-2 px-4 text-right relative">
+                                    <!-- Triple Dots Button -->
+                                    <button id="tableDropdownButton" class="text-gray-500 hover:text-gray-700">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 inline">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01" />
+                                        </svg>
+                                    </button>
+                                    <!-- Dropdown Menu -->
+                                    <div id="tableDropdownMenu" class="hidden absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical">
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Remove from table</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">View items</a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Add item to tag</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <!-- Side Bar Section -->
+                <div class="w-1/3 bg-gray-100 rounded-lg shadow-inner p-4">
+                    <h4 class="text-md font-semibold mb-4">Side Bar</h4>
+                    <div class="relative mb-4">
+                        <input type="text" placeholder="Search tags..." class="w-full p-2 pr-10 border border-gray-300 rounded-full focus:outline-none" id="tagSearchInput">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-gray-500 absolute right-3 top-3">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1117.65 6.65a7.5 7.5 0 010 10.6z" />
+                        </svg>
+                    </div>
+                    <!-- Example Tags -->
+                    <div id="sideBarTags" class="flex flex-wrap gap-2">
+                        <span class="bg-gray-300 text-gray-700 rounded-full px-3 py-1 text-xs font-medium inline-flex items-center relative cursor-pointer">
+                            <span class="bg-white text-gray-700 rounded-full w-5 h-5 flex items-center justify-center shadow mr-2 hover:bg-green-500 hover:text-white cursor-pointer">7</span>
+                            Example Tag
+                        </span>
+                        <!-- Repeat for each tag -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer>
@@ -164,5 +391,7 @@
             }
         });
     });
+    
 </script>
 </body>
+</html>
