@@ -22,38 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    let enlargedBox = null;
-    const projectContainer = document.getElementById('project-container');
-    const projectRow = document.getElementById('project-row');
-    const projectBoxes = document.querySelectorAll('.project-box');
-
-    projectBoxes.forEach(box => {
-        box.addEventListener('click', () => {
-            const description = box.querySelector('.project-description');
-
-            if (enlargedBox && enlargedBox !== box) {
-                const prevDescription = enlargedBox.querySelector('.project-description');
-                prevDescription.classList.add('hidden');
-                enlargedBox.classList.remove('enlarged');
-                projectRow.appendChild(enlargedBox);
-            }
-
-            if (enlargedBox === box) {
-                box.classList.remove('enlarged');
-                description.classList.add('hidden');
-                projectRow.appendChild(box);
-                enlargedBox = null;
-            } else {
-                box.classList.add('enlarged');
-                description.classList.remove('hidden');
-                projectContainer.insertBefore(box, projectRow);
-                enlargedBox = box;
-            }
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
         'Owen Wilson',
         'Fullstack Developer',
@@ -102,3 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 });
+
+function toggleProjectDetails(id) {
+    const details = document.getElementById(id);
+
+    if (details.style.maxHeight) {
+        details.style.maxHeight = null;
+    } else {
+        details.style.maxHeight = details.scrollHeight + "px";
+    }
+}

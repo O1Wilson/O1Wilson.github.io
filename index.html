@@ -157,26 +157,175 @@
 
     <section id="projects" class="mb-20">
         <h2 class="text-3xl font-semibold mb-4">Projects</h2>
-        <div id="project-container" class="project-container max-w-5xl mx-auto">
-            <div id="project-row" class="project-row">
-                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Fullstack01">
-                    <h3 class="text-xl font-semibold">Fullstack01</h3>
-                    <p class="project-description hidden">
-                        Fullstack01 showcases a snippet of the work I did at Bioworld. I can’t showcase all of the work I did on this project, however this repository contains the fullstack application before pushing it to production. Please feel inclined to view the ReadMe of the project, as it will break down the code used in the middle stages of the project’s development.
-                        <a href="https://github.com/O1Wilson/FullStack_01" target="_blank" rel="noopener noreferrer" class="custom-link">GitHub Link</a>
-                    </p>
+         <!-- Project: Fullstack01 -->
+        <div class="bg-gray-200 dark:bg-gray-700 p-6 rounded mb-6">
+            <h3 class="text-2xl font-semibold cursor-pointer" onclick="toggleProjectDetails('project1-details')">Fullstack01</h3>
+            <!-- Project Details Hidden by Default -->
+            <div id="project1-details" class="project-details overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out">
+                <p class="text-lg mb-4">
+                    <!-- Project description here -->
+                    Fullstack01 showcases a snippet of the work I did at Bioworld. I can’t showcase all of the work I did on this project, however this repository contains the fullstack application before pushing it to production. Please feel inclined to view the ReadMe of the project, as it will break down the code used in the middle stages of the project’s development.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Challenges -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Challenges</h4>
+                        <p>
+                            Developing Fullstack01 presented several technical and learning challenges, especially in areas that were relatively new to me:
+                        </p>
+                        <ul class="list-disc list-inside">
+                            <li>
+                                <strong>API Development in Python:</strong> One of the primary challenges was mastering <em>API development in Python</em>, where I implemented a robust <em>RESTful architecture</em> using Flask. I also integrated <em>JWT (JSON Web Tokens)</em> and <em>OAuth</em> for secure user authentication and authorization, ensuring that sensitive data remained protected throughout the application.
+                            </li>
+                            <li>
+                                <strong>Firewall Configuration and TCP Rules:</strong> On the server-side, I had to handle <em>firewall configuration</em> and <em>TCP rules</em>, which were essential for protecting the server and controlling network traffic. I set up proper <em>firewall rules</em> to allow necessary traffic while preventing unauthorized access, and managed the security of <em>TCP/IP connections</em> to safeguard the network.
+                            </li>
+                            <li>
+                                <strong>SQLAlchemy for Database Management:</strong> I worked extensively with <em>SQLAlchemy</em>, an ORM for Python, to manage complex database relationships and structures. This involved writing efficient queries, handling data migrations, and ensuring the integrity of the data across different stages of the project.
+                            </li>
+                            <li>
+                                <strong>Apache2 and Flask with mod_wsgi:</strong> Configuring <em>Apache2</em> with <em>Flask</em> using <em>mod_wsgi</em> was another key challenge in serving the application in a production environment. I configured the web server, optimized the setup for performance, and ensured a stable deployment of the Flask application.
+                            </li>
+                            <li>
+                                <strong>Custom CSS and Keyframe Animations:</strong> I wrote hundreds of lines of custom CSS to ensure that the frontend was visually appealing and responsive. I implemented <em>custom keyframe animations</em> to enhance the user experience, adding smooth transitions and animations for interactive elements. This level of customization required me to balance performance with aesthetics, ensuring that the design was both functional and visually polished.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Technologies Used -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Technologies</h4>
+                        <ul class="list-disc list-inside">
+                            <!-- Technologies used here -->
+                            <li><i class="devicon-python-plain icon-hover"></i> Python</li>
+                            <li><i class="devicon-javascript-plain icon-hover"></i> JavaScript</li>
+                            <li><i class="devicon-azuresqldatabase-plain icon-hover"></i> SQL</li>
+                            <li><i class="devicon-flask-plain icon-hover"></i> Flask</li>
+                            <li><i class="devicon-apache-plain icon-hover"></i> Apache2</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="Portfolio Website">
-                    <h3 class="text-xl font-semibold">Portfolio Website</h3>
-                    <p class="project-description hidden">This website is currently a Work-In-Progress, sorry for the lack of any details...</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <!-- Your Role -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Role</h4>
+                        <p>
+                            <!-- Your role here -->
+                            One of the two interns responsible for developing functional web-interface for creative team.
+                        </p>
+                    </div>
+                    <!-- Outcome or Results -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Outcome</h4>
+                        <p>
+                            <!-- Outcome/results here -->
+                            Successfully created an AI image portal for the entire creative teams usage. Setup foundations for future image automation.
+                        </p>
+                    </div>
                 </div>
+                <!-- Screenshots and Links -->
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold">Project Media</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <figure>
+                            <img src="path_to_your_image.jpg" alt="Screenshot of Fullstack01 project" class="rounded shadow-lg">
+                            <figcaption><a href="https://github.com/O1Wilson/FullStack_01" target="_blank">View on GitHub</a></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="path_to_your_image.jpg" alt="Another screenshot of Fullstack01 project" class="rounded shadow-lg">
+                            <figcaption><a href="https://your-live-demo-link.com" target="_blank">Live Demo</a></figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="project-box bg-gray-200 dark:bg-gray-700 p-4 rounded" data="FullstackBG">
-                    <h3 class="text-xl font-semibold">Board Game Website</h3>
-                    <p class="project-description hidden">
-                        This is a personal project of mine that I built for me and my friends. This website is designed for digital board gaming, with our own custom games. The website is built using Tailwind for the frontend, with future backend integration (Work in progress).
-                        <a href="https://github.com/O1Wilson/FullstackBG" target="_blank" rel="noopener noreferrer">GitHub Link</a>
-                    </p>
+            </div>
+        </div>
+        <!-- Project: FullstackBG -->
+        <div class="bg-gray-200 dark:bg-gray-700 p-6 rounded mb-6">
+            <h3 class="text-2xl font-semibold cursor-pointer" onclick="toggleProjectDetails('project2-details')">FullstackBG</h3>
+            <!-- Project Details Hidden by Default -->
+            <div id="project2-details" class="project-details overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out">
+                <p class="text-lg mb-4">
+                    <!-- Project description here -->
+                    This is a personal project of mine that I built for me and my friends. This website is designed for digital board gaming, with our own custom games. The website is built using Tailwind for the frontend, with future backend integration (Work in progress).
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Challenges -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Challenges</h4>
+                        <p>
+                            <!-- Project challenges here -->
+                            <div>
+                                <p>
+                                    Developing the Board Game Website as a solo project presented both time management and technical challenges. Balancing this project alongside other responsibilities made it difficult to dedicate consistent time, which taught me to:
+                                </p>
+                                <ul class="list-disc list-inside">
+                                    <li>
+                                        <strong>Time Management & Project Ownership:</strong> Since this project was done in my personal time, balancing it alongside other responsibilities was difficult. I learned to plan sprints, set goals, and work effectively without a dedicated team or external deadlines. This project honed my ability to manage timelines independently and take full ownership of the work.
+                                    </li>
+                                    <li>
+                                        <strong>Node.js & Socket.io for Real-Time Features:</strong> This project marked my first significant hands-on experience with <em>Node.js</em> and <em>Socket.io</em> to handle real-time communication. Implementing WebSockets for multiplayer board games required me to:
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>Establish real-time connections between multiple players.</li>
+                                            <li>Handle event-driven programming efficiently and ensure smooth gameplay.</li>
+                                            <li>Optimize the performance of real-time features, including minimizing latency and ensuring that the server could handle multiple active connections concurrently.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Frontend-Backend Integration:</strong> Ensuring seamless integration between the <em>Tailwind</em> frontend and the <em>Node.js</em> backend required careful coordination. I focused on managing game state across sessions, synchronizing actions between players, and ensuring data persistence for ongoing games.
+                                    </li>
+                                    <li>
+                                        <strong>Testing & Debugging Real-Time Applications:</strong> Real-time features introduced complex scenarios that were not as straightforward to test. I learned how to implement robust logging, handle connection interruptions gracefully, and debug concurrency issues related to WebSockets.
+                                    </li>
+                                    <li>
+                                        <strong>Deployment & Maintenance:</strong> Deploying a live real-time application posed a new challenge. Configuring the server to manage concurrent connections efficiently and ensuring uptime were key focuses during deployment. Working on this project allowed me to bridge the gap between theoretical knowledge and practical application, particularly in building scalable real-time applications. I emerged more confident in my ability to work with modern JavaScript frameworks, manage project timelines independently, and deliver production-level software.
+                                    </li>
+                                </ul>
+                            </div>
+                        </p>
+                    </div>
+                    <!-- Technologies Used -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Technologies</h4>
+                        <ul class="list-disc list-inside">
+                            <!-- Technologies used here -->
+                            <li><i class="devicon-javascript-plain icon-hover"></i> JavaScript</li>
+                            <li><i class="devicon-tailwindcss-plain icon-hover"></i> Tailwind</li>
+                            <li><i class="devicon-nodejs-plain icon-hover"></i> Node.js</li>
+                            <li><i class="devicon-react-original icon-hover"></i> React.js</li>
+                            <li>Frontend Design</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <!-- Your Role -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Role</h4>
+                        <p>
+                            <!-- Your role here -->
+                            Sole Creator of the website. 
+                        </p>
+                    </div>
+                    <!-- Outcome or Results -->
+                    <div>
+                        <h4 class="text-xl font-semibold">Outcome</h4>
+                        <p>
+                            <!-- Outcome/results here -->
+                            
+                        </p>
+                    </div>
+                </div>
+                <!-- Screenshots and Links -->
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold">Project Media</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <figure>
+                            <img src="path_to_your_image.jpg" alt="Screenshot of Fullstack01 project" class="rounded shadow-lg">
+                            <figcaption><a href="https://github.com/O1Wilson/FullStackBG" target="_blank">View on GitHub</a></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="path_to_your_image.jpg" alt="Another screenshot of Fullstack01 project" class="rounded shadow-lg">
+                            <figcaption><a href="https://your-live-demo-link.com" target="_blank">Live Demo</a></figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>
