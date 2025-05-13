@@ -10,20 +10,21 @@ body {
     background-color: #0d1016;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-.dark-mode footer {
+.dark-mode .projectbox {
     background-color: #0d1016;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-.dark-mode input[type="text"],
-.dark-mode input[type="email"] {
+.dark-mode input[type="text"] {
     background-color: #0d1016;
     color: #a0aec0;
     border: 1px solid #333;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-.dark-mode .project-box {
-    background-color: #0d1016;
-    transition: background-color 0.5s ease, color 0.5s ease;
+.no-dark-mode-inputs .dark-mode input[type="text"] {
+    background-color: inherit !important;
+    color: inherit !important;
+    border: inherit !important;
+    transition: none !important;
 }
 .icon-hover {
     display: inline-block;
@@ -49,6 +50,9 @@ body {
     align-items: center;
     gap: 6.5rem;
 }
+.projectheader {
+    color: initial;
+}
 .project-row {
     display: flex;
     flex-wrap: wrap;
@@ -58,6 +62,14 @@ body {
 }
 .project-box {
     transition: transform 0.5s ease, z-index 0.5s ease;
+}
+.project-details {
+    color: initial;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}
+.max-h-\[2000px\] {
+    max-height: 2000px !important;
 }
 .enlarged {
     transform: scale(1.5);

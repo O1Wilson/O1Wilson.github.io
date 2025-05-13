@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
         'Owen Wilson',
-        'Fullstack Developer',
+        'Graphics Programmer',
         'Video Game Creator',
-        'Tailwind Designer',
+        '3D Artist',
         'Deep Learning Enthusiast'
     ];
     const typingText = document.getElementById('typing-text');
@@ -71,12 +71,32 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
 });
 
-function toggleProjectDetails(id) {
-    const details = document.getElementById(id);
+function checkIfAnyProjectsOpen() {
+    const details = document.querySelectorAll('.project-details');
+    return Array.from(details).some(el => el.classList.contains('max-h-[2000px]'));
+}
 
-    if (details.style.maxHeight) {
-        details.style.maxHeight = null;
-    } else {
-        details.style.maxHeight = details.scrollHeight + "px";
+function updateScrollHintVisibility() {
+    const projectDetails = document.querySelectorAll('.project-details');
+    const anyOpen = Array.from(projectDetails).some(el => el.classList.contains('max-h-[5000px]'));
+    const hint = document.getElementById('scroll-hint');
+    if (hint) {
+        hint.style.display = anyOpen ? 'none' : 'flex';
     }
 }
+
+function toggleProjectDetails(id) {
+    const el = document.getElementById(id);
+    if (el.classList.contains('max-h-0')) {
+        el.classList.remove('max-h-0');
+        el.classList.add('max-h-[5000px]');
+    } else {
+        el.classList.remove('max-h-[5000px]');
+        el.classList.add('max-h-0');
+    }
+    updateScrollHintVisibility();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateScrollHintVisibility();
+});
