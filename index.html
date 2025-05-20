@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
+    <title>Owen Wilson's Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 <nav class="bg-gray-200 dark:bg-gray-900 fixed w-full top-0 left-0 shadow-md z-50">
     <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <strong>Portfolio</strong>
+        <strong>My Portfolio</strong>
         <ul class="flex space-x-4">
             <li><a href="#about" class="hover:text-blue-500">About Me</a></li>
             <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
@@ -36,7 +36,15 @@
                     <span class="typing-cursor"></span>
                 </span>
             </h2>
-            <p>My journey began in the music industry, but a deep fascination with math and coding led me to transition into the tech world. Over the past 5 years, I've been dedicated to honing my skills. With a focus on continuous learning and growth, I’m always excited to explore new technologies and enhance my expertise. Whether it's graphics programming, AI, or general game development, I'm driven by a love for problem-solving and a passion for math. Feel free to connect with me or explore my projects to see how I combine creativity with technical skills to bring ideas to life!</p>
+            <p class="mt-4">
+                I started out in the music world, but over time, I found myself getting more and more drawn to math and programming. What started as curiosity quickly became something I wanted to pursue seriously. For the past five years, I've been focused on growing as a developer — learning new tools, tackling bigger projects, and building a solid understanding of how things work under the hood. I'm especially interested in graphics, AI, and game development, but more than anything, I just enjoy solving problems and creating things that feel meaningful. If you're curious about what I've been working on, feel free to check out my projects or reach out.
+            </p>
+            <p class="mt-4">
+                Music has been a major part of my life for over 10 years. I started on alto saxophone and eventually picked up guitar and piano. These days, I play all three saxophones (alto, tenor, bari), guitar, bass, piano, and a bit of violin. I'm especially into jazz and freeform styles, and most of what I play falls somewhere between fusion, funk, and rock with strong jazz influence. Aside from music, I have a deep appreciation for art abstract and classical works in particular. And while I touch on this in my technical sections, it's worth saying: I really enjoy math. I often spend free time working through math problems for fun.
+            </p>
+            <p class="mt-4">
+                If it doesn't become abundantly obvious from the rest of this page — I really love graphics programming. It's been one of the most rewarding areas I've explored in tech so far. For me, it hits a perfect balance between high-level math, deep problem-solving, and creative freedom. Whether I'm working with OpenGL, Unreal, or just studying it in general, I always feel fully locked in. Out of everything I've tried in this field, graphics was the only one to pull me in this much.
+            </p>
         </div>
     </section>
 
@@ -109,6 +117,19 @@
                 </div>
             </div>
         </div>
+        <div class="mt-10">
+        <h3 class="text-2xl font-semibold mb-2">Experience Overview</h3>
+        <p class="text-base text-gray-700 mb-4">
+            I started learning C# back in 2020 through Unity. For a while, it was the only language I used — Unity was a great engine, and I hadn't explored much outside of it yet. I even got into Unity's Scriptable Rendering Pipeline, which used HLSL (basically C# with shaders). Later in 2024, I landed an internship at Bioworld, a merchandising company, where I built an AI for generating art used on T-shirts. That project exposed me to Python, Flask, and generative AI, and for a while I thought AI might be my full-time path, as I fell in love with the mathematics behind it. That was until I found graphics, I've completly shifted my focus toward graphics programming in C++, especially in OpenGL and Vulkan. I've been diving deep into rendering, lighting, and high level mathematics and it's been the most exciting and challenging work I've done so far. I've been completely enveloped by the world of graphics, and I love every minute spent working with it. Thus C++ has become my main focus, as its the primary coding language used for Graphics and I feel more confident than ever in my knowledge of math and computers. This journey into graphics has truly accelerated my understanding of the science behind computers and rendering, and I will love to see where it takes me!
+        </p>
+        <p class="text-base text-gray-700 mb-4">
+            My experience with Unreal Engine and Unity comes from several solo projects and prototypes over the years. I've spent a lot of time learning how to write shaders, both for visual effects and performance. In Unity, I've worked with compute shaders and the job system to get things running smoothly, especially on lower-end hardware. In Unreal, I've been getting comfortable with the rendering pipeline and how to tweak materials and lighting to get the look I want without killing performance. I'm really drawn to the low-level side of graphics, but these engines allow me to express my creative side much easier, which is a fun aspect.
+        </p>
+        <p class="text-base text-gray-700 mb-4">
+            Right now, I'm diving deeper into real-time rendering and engine internals — things like forward+ rendering, GPU culling, and memory management in C++. I've also been keeping an eye on modern graphics APIs like Vulkan, just to understand how things work under the hood.
+        </p>
+
+    </div>
     </section>
 
     <div id="scroll-hint" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-50">
@@ -138,7 +159,7 @@
                     <div>
                     <h3 class="text-xl font-semibold mb-2">1. Primitive Shapes and Buffers</h3>
                     <p class="text-gray-700 mb-4">
-                        I started with rendering simple primitives: a triangle, then a square, and finally a cube. This helped me get a handle on OpenGL’s VAO, VBO, and EBO system. It's also where I wrote my first Vertex and Fragment shaders for OpenGL. I had written shaders before (hlsl) inside Unity's scriptibal pipeline, and GLSL is mostly the same, but nonetheless it was really fun seeing how customizable you can get with no limiting factor like Unity. I also got to apply some cool math in this portion, where I manipulated my objects with rotation equations using transformation matrices, which I learned from a Graphics Book by Fletcher Dunn.
+                        I started with rendering simple primitives: a triangle, then a square, and finally a cube. This helped me get a handle on OpenGL's VAO, VBO, and EBO system. It's also where I wrote my first Vertex and Fragment shaders for OpenGL. I had written shaders before (hlsl) inside Unity's scriptibal pipeline, and GLSL is mostly the same, but nonetheless it was really fun seeing how customizable you can get with no limiting factor like Unity. I also got to apply some cool math in this portion, where I manipulated my objects with rotation equations using transformation matrices, which I learned from a Graphics Book by Fletcher Dunn.
                     </p>
                     <div class="flex flex-wrap gap-6 justify-center items-start">
                         <div class="flex flex-col items-center w-full sm:w-1/3 max-w-sm">
@@ -216,14 +237,14 @@
                     <div>
                     <h3 class="text-xl font-semibold mb-2">Learning Process</h3>
                     <p class="text-gray-700">
-                        Even though this was my first OpenGL project, I had a solid foundation going in. I’d already read <em>3D Math Primer for Graphics and Game Development</em> (Fletcher Dunn) and <em>Foundations of Game Engine Development</em> by Eric Lengyel, as well as a strong theoretical understanding of linear algebra from Gilbert Strang's textbooks. Those books helped a lot with the math side of things.
+                        Even though this was my first OpenGL project, I had a solid foundation going in. I'd already read <em>3D Math Primer for Graphics and Game Development</em> (Fletcher Dunn) and <em>Foundations of Game Engine Development</em> by Eric Lengyel, as well as a strong theoretical understanding of linear algebra from Gilbert Strang's textbooks. Those books helped a lot with the math side of things.
                         <br><br>
-                        Throughout the project, I followed the LearnOpenGL tutorials. Thanks to the reading I’d done beforehand, the material clicked pretty quickly, and I was able to apply it in my own setup without just copying the code. 
+                        Throughout the project, I followed the LearnOpenGL tutorials. Thanks to the reading I'd done beforehand, the material clicked pretty quickly, and I was able to apply it in my own setup without just copying the code. 
                     </p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-2">Source Code & GitHub History</h3>
-                        <p class="text-gray-700 mb-4"> All the code for this project is available on my GitHub repository, including the full source, shaders, and supporting assets. You can actually follow along with how I built each part of the renderer from the ground up, step by step by checking out the Commit Graph. It’s a pretty honest snapshot of how I approached the project and how it evolved over time.<br><br>You can check it out here: 
+                        <p class="text-gray-700 mb-4"> All the code for this project is available on my GitHub repository, including the full source, shaders, and supporting assets. You can actually follow along with how I built each part of the renderer from the ground up, step by step by checking out the Commit Graph. It's a pretty honest snapshot of how I approached the project and how it evolved over time.<br><br>You can check it out here: 
                           <a href="https://github.com/O1Wilson/OpenGLRenderingEngine" target="_blank" class="text-blue-600 hover:underline"> GitHub Repository – OpenGL Renderer</a>
                         </p>
                       </div>
@@ -231,8 +252,63 @@
             </div>
         </div>
         <div class="bg-gray-200 dark:bg-gray-700 p-6 rounded mb-6">
-            <h3 class="projectheader text-2xl font-semibold cursor-pointer" onclick="toggleProjectDetails('project2-details')">FullstackBG</h3>
+            <h3 class="projectheader text-2xl font-semibold cursor-pointer" onclick="toggleProjectDetails('project2-details')">Compute Shader Graph</h3>
             <div id="project2-details" class="project-details overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-gray-300 dark:bg-gray-600 text-sm px-3 py-1 rounded-full">C#</span>
+                    <span class="bg-gray-300 dark:bg-gray-600 text-sm px-3 py-1 rounded-full">Unity</span>
+                    <span class="bg-gray-300 dark:bg-gray-600 text-sm px-3 py-1 rounded-full">HLSL</span>
+                  </div>
+                <div class="mb-10">
+                    <h3 class="text-xl font-semibold mb-2">Overview</h3>
+                    <p class="text-gray-700">
+                        This was a GPU-heavy project in Unity where I built two separate visualization systems — one for rendering mathematical shapes using a compute shader, and another for animating a fractal hierarchy with Unity's Job System.
+                    </p>
+                </div>
+                <div class="space-y-12">
+                    <div>
+                    <h3 class="text-xl font-semibold mb-2">1. Compute Shader</h3>
+                    <p class="text-gray-700 mb-4">
+                        For the graph system, I wrote a compute shader that positions thousands of cubes on a grid based on different math functions (like sine waves, ripples, spheres, etc). These functions are all GPU-driven, which means they update in real-time without needing the CPU. I also wrote a small HLSL shader that colors each cube based on its position in world space — it's a simple touch, but it makes the shapes look way more dynamic as they animate.
+                    </p>
+                    <div class="flex flex-wrap gap-6 justify-center items-start">
+                        <div class="flex flex-col items-center w-full sm:w-1/3 max-w-sm">
+                            <img src="css/images/sphere.png" alt="Rendered triangle" class="rounded-lg shadow-md w-full">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center">A Sphere instantiated with the compute shader.</p>
+                        </div>
+                        <div class="flex flex-col items-center w-full sm:w-1/3 max-w-sm">
+                            <img src="css/images/torus.png" alt="Angled cube" class="rounded-lg shadow-md w-full">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center">A Torus instantiated with the compute shader.</p>
+                        </div>
+                        <div class="flex flex-col items-center w-full sm:w-1/3 max-w-sm">
+                            <video autoplay loop muted playsinline class="rounded-lg shadow-md w-full">
+                              <source src="css/videos/shapesanim.mp4" type="video/mp4">
+                            </video>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center">Multiple shapes, morphing into eachother using linear interpolation.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">2. Job System</h3>
+                        <p class="text-gray-700 mb-4">
+                            The second part of the project was a recursive fractal generator, where I used Unity's Job System + Burst to calculate all the movement and rotations for each "fractal part" in parallel. This kept the performance solid even at high recursion depths. After getting the base animation working, I tweaked the HLSL shader again to vary the colors by fractal level and world position — I was going for something a little more natural and less grid-like than the graph system.
+                        </p>
+                        <div class="flex flex-wrap gap-6 justify-center items-start">
+                            <div class="flex flex-col items-center w-full sm:w-1/3 max-w-sm">
+                                <video controls class="rounded-lg shadow-md w-full">
+                                <source src="css/videos/fractal.mp4" type="video/mp4">
+                                </video>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 text-center">Rotating Fractal, with organic variation in the shader.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Source Code & GitHub History</h3>
+                        <p class="text-gray-700 mb-4"> All the code for this project is available on my GitHub repository, including the full source, shaders, and supporting assets.<br><br>You can check it out here: 
+                          <a href="https://github.com/O1Wilson/ComputeShaderGraph" target="_blank" class="text-blue-600 hover:underline"> GitHub Repository – Compute Shader Graph</a>
+                        </p>
+                      </div>
+                </div>
             </div>
         </div>
     </section>    
