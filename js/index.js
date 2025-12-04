@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
         'Owen Wilson',
         'Graphics Programmer',
-        'Video Game Developer'
+        'Video Game Developer',
+        'Technical Artist'
     ];
     const typingText = document.getElementById('typing-text');
     const highlight = document.getElementById('highlight');
